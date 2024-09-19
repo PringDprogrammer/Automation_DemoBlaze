@@ -1,0 +1,18 @@
+{
+  "name": "javascript-selenium",
+  "version": "1.0.0",
+  "main": "demoLogin.js",
+  "scripts": {
+    "test": "mocha './test/cartPageTest.js' --timeout 60000"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chromedriver": "^127.0.1",
+    "edgedriver": "^5.6.0",
+    "mocha": "^10.7.3",
+    "selenium-webdriver": "^4.22.0",
+    "typo-js": "^1.2.4"
+  }
+}
