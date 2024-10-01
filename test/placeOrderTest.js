@@ -1,4 +1,4 @@
-const { Builder, By, Key } = require("selenium-webdriver");
+const { Builder } = require("selenium-webdriver");
 const PlaceOrder = require("../page/placeOrderObjects");
 const BasePage = require("../page/basePageObjects");
 const HomePage = require("../page/homePageObjects");
@@ -32,7 +32,6 @@ describe("Place Order Test", () => {
         logInPage = new LogInPage(driver);
 
         await basePage.openUrl("https://www.demoblaze.com/index.html");
-        await driver.findElement(By.tagName('body')).sendKeys(Key.F11);
     });
 
     afterEach(async() => {

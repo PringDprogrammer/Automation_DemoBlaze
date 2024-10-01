@@ -16,7 +16,7 @@ class PlaceOrder {
         await this.driver.wait(until.elementLocated(this.placeOrderBtn), 10000);
         let orderBtn = await this.driver.findElement(this.placeOrderBtn);
         await orderBtn.click();
-        console.log("button clicked!");
+        console.log("Place order button click!");
         await this.driver.sleep(3000);
 
     }
