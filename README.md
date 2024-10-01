@@ -9,6 +9,7 @@ This is my practice stage doing automation testing process
 - Mocha
 
 ## Installation
+- npm init
 - npm install selenium-webdriver chromedriver
 - npm install mocha
 
