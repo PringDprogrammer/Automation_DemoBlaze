@@ -31,12 +31,12 @@ class LogInPage {
     async isSuccessfullyLoggedIn() {
 
         while(true) {
-            
+            await this.driver.wait(until.elementLocated(this.welcomeUserName), 15000);
+            console.log("Welcome name element was located");
+        
             try {
-                await this.driver.wait(until.elementLocated(this.welcomeUserName), 10000);
-                console.log("Welcome name element was located");
-
                 let name = await this.driver.findElement(this.welcomeUserName);
+                await this.driver.wait(until.elementIsVisible(name), 15000)  
                 const isDisplayed = await name.isDisplayed();
 
                 if(isDisplayed) {
@@ -50,7 +50,6 @@ class LogInPage {
                     console.log(`Welcome "${nameText}" is now visible`);
                     await this.driver.sleep(2000);
                     break;
-                    
                 }
                 else {
                     console.error("Welcome name element is not displayed on the page.");

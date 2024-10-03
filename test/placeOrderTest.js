@@ -49,7 +49,7 @@ describe("Place Order Test", () => {
         await placeOrder.clickCloseBtn();
     });
 
-    xit("TC002 - Empty Field then submit the form", async () => {
+    it("TC002 - Validation process for empty order form", async () => {
         await homePage.clickLoginBtn();
         await logInPage.enterUsername("test_test_test123");
         await logInPage.enterPassword("test_test_test123");
@@ -58,16 +58,61 @@ describe("Place Order Test", () => {
         await homePage.navigateToCart();
         await placeOrder.clickPlaceOrder();
         await placeOrder.clickPurchaseBtn();
-        await placeOrder.purchaseAlertPrompt();
+        await placeOrder.validateRequiredFieldsAlertPrompt();
     });
 
-    // it("TC002 - With empty name field then submit the form", async () => {
-        
-    // });
+    it("TC003 - Validation process - empty the Name field", async () => {
+        await homePage.clickLoginBtn();
+        await logInPage.enterUsername("test_test_test123");
+        await logInPage.enterPassword("test_test_test123");
+        await logInPage.clickLoginBtn();
+        await logInPage.isSuccessfullyLoggedIn();
+        await homePage.navigateToCart();
+        await placeOrder.clickPlaceOrder();
+        await placeOrder.enterCountry("Philippines");
+        await placeOrder.enterCity("Lucena City");
+        await placeOrder.enterCard("12312312313123");
+        await placeOrder.enterMonth("Oct");
+        await placeOrder.enterYear("2024");
+        await placeOrder.clickPurchaseBtn();
+        await placeOrder.validateRequiredFieldsAlertPrompt();
+    });
 
-    // it("TC003 - With empty creditCard field then submit the form", async () => {
+    it("TC004 - Validation process - empty the Credit Card field", async () => {
+        await homePage.clickLoginBtn();
+        await logInPage.enterUsername("test_test_test123");
+        await logInPage.enterPassword("test_test_test123");
+        await logInPage.clickLoginBtn();
+        await logInPage.isSuccessfullyLoggedIn();
+        await homePage.navigateToCart();
+        await placeOrder.clickPlaceOrder();
+        await placeOrder.enterName("Example Tester");
+        await placeOrder.enterCountry("Philippines");
+        await placeOrder.enterCity("Lucena City");
+        await placeOrder.enterMonth("Oct");
+        await placeOrder.enterYear("2024");
+        await placeOrder.clickPurchaseBtn();
+        await placeOrder.validateRequiredFieldsAlertPrompt();
+    });
 
-    // });
+    it("TC005 - Validation process - Successfully place the order", async () => {
+        await homePage.clickLoginBtn();
+        await logInPage.enterUsername("test_test_test123");
+        await logInPage.enterPassword("test_test_test123");
+        await logInPage.clickLoginBtn();
+        await logInPage.isSuccessfullyLoggedIn();
+        await homePage.navigateToCart();
+        await placeOrder.clickPlaceOrder();
+        await placeOrder.enterName("Example Tester");
+        await placeOrder.enterCountry("Philippines");
+        await placeOrder.enterCity("Lucena City");
+        await placeOrder.enterCard("1232223322123");
+        await placeOrder.enterMonth("Oct");
+        await placeOrder.enterYear("2024");
+        await placeOrder.clickPurchaseBtn();
+        await placeOrder.successfulPurchaseAlertPrompt();
+        await basePage.getURL();
+    });
 
 
 
