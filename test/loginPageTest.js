@@ -29,7 +29,7 @@ describe("Login page test", () => {
         await driver.quit();
     });
 
-    it("TC001 Negative test - User enters wrong username", async () => {
+    it("TC001 Negative test - User enter correct password but wrong username", async () => {
 
         await homePage.clickLoginBtn();
         await driver.sleep(2000);
@@ -43,7 +43,7 @@ describe("Login page test", () => {
         
     });
 
-    it("TC002 Negative test - User enters wrong password", async () => {
+    it("TC002 Negative test - User enter correct username but wrong password", async () => {
 
         await homePage.clickLoginBtn();
         await driver.sleep(2000);
@@ -56,7 +56,7 @@ describe("Login page test", () => {
         await loginPage.userWrongPasswordAlert();
     });
 
-    it("TC003 Negative test - Click the Login button without filling all the fields.", async () => {
+    it("TC003 Negative test - Click the Login button without completing all the fields", async () => {
 
         await homePage.clickLoginBtn();
         await driver.sleep(2000);

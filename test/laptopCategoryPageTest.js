@@ -22,7 +22,7 @@ describe("Categories Page test - Laptops", () => {
     });
 
 
-    it("TC0001 Click Laptops category -> click multiple item from the list", async () => {
+    it("TC0001 Laptops category -> click laptop items from the list", async () => {
         await categories.clickLaptopCateg();
         await categories.clickLaptopItemList1();
         await categories.firstLaptopItemDetails();

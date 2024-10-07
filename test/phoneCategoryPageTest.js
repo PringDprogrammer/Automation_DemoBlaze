@@ -23,7 +23,7 @@ describe("Categories Page test - Phones", () => {
         await driver.quit();
     });
 
-    it("TC0001 Click Phones category -> click multiple item from the list", async () => {
+    it("TC0001 Phones category -> click multiple item from the list", async () => {
 
         await categories.clickPhoneCateg();
         await categories.goScrollDown();

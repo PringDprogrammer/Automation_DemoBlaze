@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "demoLogin.js",
   "scripts": {
-    "test": "mocha './test/placeOrderTest.js' --timeout 60000"
+    "test": "mocha './test/*.js' --timeout 60000"
   },
   "author": "",
   "license": "ISC",

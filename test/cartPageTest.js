@@ -31,7 +31,7 @@ describe("Cart Page test", () => {
         await driver.quit();
     });
 
-    xit("TC001 - Logged In -> Logged In -> Cart is empty", async () => {
+    it("TC001 - User logged in and the Cart is empty", async () => {
         await homePage.clickLoginBtn();
         await logInPage.enterUsername("test_test_test123");
         await logInPage.enterPassword("test_test_test123");
@@ -41,7 +41,7 @@ describe("Cart Page test", () => {
         await cart.checkCart();
     });
     
-    xit("TC002 - Logged In ->Logged In -> Cart have 1 item", async () => {
+    it("TC002 - User logged in and the Cart have 1 item", async () => {
         await homePage.clickLoginBtn();
         await logInPage.enterUsername("test_test_test123");
         await logInPage.enterPassword("test_test_test123");
@@ -57,7 +57,7 @@ describe("Cart Page test", () => {
 
     });
 
-    it("TC003 - Logged In ->Logged In -> Cart have many items", async () => {
+    it("TC003 - User logged in and the Cart have many items", async () => {
 
         // log in to app
         await homePage.clickLoginBtn();

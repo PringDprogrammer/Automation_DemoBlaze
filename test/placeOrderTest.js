@@ -61,7 +61,7 @@ describe("Place Order Test", () => {
         await placeOrder.validateRequiredFieldsAlertPrompt();
     });
 
-    it("TC003 - Validation process - empty the Name field", async () => {
+    it("TC003 - Validation process - required field Name is empty", async () => {
         await homePage.clickLoginBtn();
         await logInPage.enterUsername("test_test_test123");
         await logInPage.enterPassword("test_test_test123");
@@ -78,7 +78,7 @@ describe("Place Order Test", () => {
         await placeOrder.validateRequiredFieldsAlertPrompt();
     });
 
-    it("TC004 - Validation process - empty the Credit Card field", async () => {
+    it("TC004 - Validation process - required field Credit Card is empty", async () => {
         await homePage.clickLoginBtn();
         await logInPage.enterUsername("test_test_test123");
         await logInPage.enterPassword("test_test_test123");

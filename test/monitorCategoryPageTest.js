@@ -21,7 +21,7 @@ describe("Categories Page test - Monitors", () => {
         await driver.quit();
     });
 
-    it("TC0001 Click Monitors category -> click an item from the list", async () => {
+    it("TC0001 Monitors category -> click monitor item from the list", async () => {
 
         await CategoriesPage.clickMonitorsCateg();
         await CategoriesPage.clickMonitorsList();
